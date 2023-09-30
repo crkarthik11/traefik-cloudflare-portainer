@@ -3,8 +3,8 @@ http:
     custom-auth:
       basicAuth:
         users:
-          - {BASIC_AUTH_USER1} # htpasswd -nb user password
-          - {BASIC_AUTH_USER2} # htpasswd -nb user password
+          - admin:$apr1$hhZ0Uzlv$H64Wk4NY0CTJ3oj72nfs70 # htpasswd -nb user password
+          - admin:$apr1$hhZ0Uzlv$H64Wk4NY0CTJ3oj72nfs70 # htpasswd -nb user password
   services:
     portainer-service:
       loadBalancer:
@@ -16,27 +16,27 @@ http:
       entryPoints:
         - websecure
       service: api@internal
-      rule: Host("traefik.${BASE_DOMAIN}")
+      rule: Host("traefik.test.domain.com")
       # middlewares:
       #   - custom-auth
       tls:
         certresolver: cloudflare
         domains: 
-          - main: "${BASE_DOMAIN}"
+          - main: "*.test.domain.com"
             sans: 
-              - "${BASE_DOMAIN}"
+              - "*.test.domain.com"
 
     portainer-router:
-      rule: "Host(`admin.${BASE_DOMAIN}`)"  
+      rule: "Host(`admin.test.domain.com`)"  
       service: portainer-service
       # middlewares:
       #   - custom-auth
       tls:
         certresolver: cloudflare
         domains: 
-          - main: "${BASE_DOMAIN}"
+          - main: "*.test.domain.com"
             sans: 
-              - "${BASE_DOMAIN}"
+              - "*.test.domain.com"
 
   
 

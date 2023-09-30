@@ -1,9 +1,3 @@
-# CLoudflare Deets
+# Cloudflare Deets
 CLOUDFLARE_API_EMAIL = "cloudflare email"
 CLOUDFLARE_API_KEY = "cloudflare token"
-BASE_DOMAIN = "*.test.example.com"  
-
-# Traefik Deets
-# Generate basic auth user from $htpasswd -nb admin admin
-BASIC_AUTH_USER1= "admin:$apr1$hhZ0Uzlv$H64Wk4NY0CTJ3oj72nfs70"
-BASIC_AUTH_USER2= "admin:$apr1$hhZ0Uzlv$H64Wk4NY0CTJ3oj72nfs70"
