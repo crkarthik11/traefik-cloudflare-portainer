@@ -1,0 +1,12 @@
+# CLoudflare Deets
+CLOUDFLARE_API_EMAIL = "cloudflare email"
+CLOUDFLARE_API_KEY = "cloudflare token"
+BASE_DOMAIN = "wildcard sub domain" #ex *.test.example.com
+
+# Portainer Deets
+PORTAINER_ADMIN_PASSWORD = "mN9uA:qw2/iElU*C2}V-nVm\at+j_(_?"
+
+# Traefik Deets
+# Generate basic auth user from $htpasswd -nb admin admin
+BASIC_AUTH_USER1= "admin:$apr1$hhZ0Uzlv$H64Wk4NY0CTJ3oj72nfs70"
+BASIC_AUTH_USER2= "admin:$apr1$hhZ0Uzlv$H64Wk4NY0CTJ3oj72nfs70"
